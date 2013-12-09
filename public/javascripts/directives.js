@@ -74,8 +74,6 @@
       var aceEdit = ace.edit('ace-editor');
       var session = aceEdit.getSession();
 
-      window.editor = aceEdit;
-
       aceEdit.setOptions({
         enableBasicAutocompletion: true,
         enableSnippets: true
