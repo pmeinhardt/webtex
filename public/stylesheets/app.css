@@ -1,5 +1,6 @@
 .eqn-input {
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace !important;
+  min-height: 240px;
 }
 
 .footer {

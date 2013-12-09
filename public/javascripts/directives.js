@@ -62,9 +62,45 @@
       $scope.$watch('dpi', $scope.update);
     };
 
+    var link = function($scope, $element, $attrs) {
+      if (typeof ace === 'undefined') {
+        return;
+      }
+
+      // ace editor is available, switch to 'ace' mode
+      $scope.mode = 'ace';
+
+      // initialize the ace editor
+      var aceEdit = ace.edit('ace-editor');
+      var session = aceEdit.getSession();
+
+      window.editor = aceEdit;
+
+      aceEdit.setOptions({
+        enableBasicAutocompletion: true,
+        enableSnippets: true
+      });
+
+      session.setMode("ace/mode/latex");
+
+      aceEdit.renderer.setShowPrintMargin(false);
+      aceEdit.setValue(EQN);
+
+      // propagates changes from ace editor to the textarea
+      var sync = function() {
+        var val = aceEdit.getSession().getValue();
+        $scope.equation = val;
+      };
+
+      aceEdit.getSession().on('change', function() {
+        $scope.$apply(sync);
+      });
+    };
+
     var editor = {
       scope: true,
-      controller: controller
+      controller: controller,
+      link: link
     };
 
     return editor;
