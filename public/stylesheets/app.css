@@ -3,6 +3,20 @@
   min-height: 240px;
 }
 
+.render-panel-footer select.input-sm {
+  height: 20px;
+  line-height: 20px;
+}
+
+.render-panel-footer select {
+  opacity: 0.15;
+  transition: opacity 0.3s;
+}
+
+.render-panel-footer:hover select {
+  opacity: inherit;
+}
+
 .footer {
   margin-top: 2.4em;
   margin-bottom: 1.6em;
