@@ -83,6 +83,7 @@
 
       aceEdit.renderer.setShowPrintMargin(false);
       aceEdit.setValue(EQN);
+      aceEdit.focus();
 
       // propagates changes from ace editor to the textarea
       var sync = function() {
