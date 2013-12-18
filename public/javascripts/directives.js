@@ -2,7 +2,8 @@
   var module = angular.module('app.directives', []);
 
   var API = 'http://latex.codecogs.com/';
-  var EQN = '(\\exists e) \\, \\text{renders}(latex) \\implies e = webtex';
+  var EQN = '(\\exists e) \\, \\text{renders}(e, \\LaTeX) \\implies' +
+    ' e = \\text{webtex}';
 
   var TexEditor = function($timeout) {
     var controller = function($scope, $element, $attrs) {
